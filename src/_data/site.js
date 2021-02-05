@@ -14,6 +14,16 @@ module.exports =  async function() {
       text,
       linkText
     },
+
+    "contact": *[_type == "contactPage"]{
+      title,
+      slug{
+        current
+      }
     }[0]
+
+    }[0]
+
+
   `)
 }

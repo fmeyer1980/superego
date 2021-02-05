@@ -5,36 +5,27 @@ const serializers = require('../../utils/serializers')
 const overlayDrafts = require('../../utils/overlayDrafts')
 const hasToken = !!client.config().token
 
-function generateServices (services) {
+function generateEmployers (employers) {
   return {
-    ...services,
-    excerpt: BlocksToMarkdown(services.excerpt, { serializers, ...client.config() }),
-    body: BlocksToMarkdown(services.body, { serializers, ...client.config() })
+    ...employers,
+    excerpt: BlocksToMarkdown(employers.excerpt, { serializers, ...client.config() }),
+    body: BlocksToMarkdown(employers.body, { serializers, ...client.config() })
   }
 }
 
-async function getServices () {
+async function getEmployers () {
   // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "services" && defined(slug)]`
+  const filter = groq`*[_type == "employers"]`
   const projection = groq`{
-    title,
-    slug{
-      current
-    },
-    mainImage,
-    body[]{
-      ...,
-      children[]{
-        ...,
-      }
-    },
+    name,
+    mainImage
   }`
   const order = `| order(publishedAt asc)`
   const query = [filter, projection, order].join(' ')
   const docs = await client.fetch(query).catch(err => console.error(err))
   const reducedDocs = overlayDrafts(hasToken, docs)
-  const prepareServices = reducedDocs.map(generateServices)
-  return prepareServices
+  const prepareEmployers = reducedDocs.map(generateEmployers)
+  return prepareEmployers
 }
 
-module.exports = getServices
+module.exports = getEmployers

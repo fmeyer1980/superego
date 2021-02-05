@@ -32,7 +32,7 @@
 				<ul>
 					{% for item in services %}
 						<li>
-							<a href="kompetancer/{{ item.slug.current }}/">{{ item.title }}</a>
+							<a href="/{{ servicePage.slug.current }}/{{ item.slug.current }}/">{{ item.title }}</a>
 						</li>
 					{% endfor %}
 				</ul>

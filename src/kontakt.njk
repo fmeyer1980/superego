@@ -1,0 +1,13 @@
+---
+permalink: "{{ site.contact.slug.current }}/"
+---
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['css/home.css']%}
+
+{% set pageCriticalStyles = ['css/home.css']%}
+{% block content %}
+	{% for item in employers %}
+    dff
+        <h3>{{ item.name }}</h3>
+    {% endfor %}
+{% endblock %}

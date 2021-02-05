@@ -9,6 +9,12 @@
 				<li>
 					<a {{ helpers.getLinkActiveState(("/"+ casesPage.slug.current +"/"), page.url) | safe }} href="/{{ casesPage.slug.current }}/">{{ casesPage.title }}</a>
 				</li>
+				<li>
+					<a {{ helpers.getLinkActiveState(("/"+ bureauet.slug.current +"/"), page.url) | safe }} href="/{{ bureauet.slug.current }}/">{{ bureauet.title }}</a>
+				</li>
+				<li>
+					<a {{ helpers.getLinkActiveState(("/"+ site.contact.slug.current +"/"), page.url) | safe }} href="/{{ site.contact.slug.current }}/">{{ site.contact.title }}</a>
+				</li>
 			</li>
 		</ul>
 	</nav>

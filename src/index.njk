@@ -1,5 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% set pageCriticalStyles = ['css/home.css']%}
+{% set metaTitle = home.meta.title %}
+{% set metaDesc = home.meta.description %}
 {% block content %}
 	{% include "partials/hero.njk" %}
 	{% include "partials/intro.njk" %}
