@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  color: inherit;
+  @include apply-utility('text-space', 'tight');
+  @include apply-utility('font', 'heading');
+  @include apply-utility('weight', 'bold');
+  line-height: 1;
+  transition: background-color, color, 0.2s ease-in-out;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1em 1.6em;
+
+  &[data-type='primary'] {
+    color: get-color('secondary');
+    @include apply-utility('text-transform', 'up');
+    border: 2px solid get-color('primary');
+    color: get-color('primary');
+
+    &:hover {
+      background-color: get-color('primary');
+      color: get-color('secondary');
+    }
+  }
+
+  &[data-type='secondary'] {
+    background-color: get-color('secondary');
+    color: get-color('white');
+    @include apply-utility('text-transform', 'up');
+    @include apply-utility('rounded', 'sm');
+    padding: 0.7em 1.6em;
+    &:hover {
+      background-color: get-color('primary');
+      color: get-color('black');
+    }
+  }
+}

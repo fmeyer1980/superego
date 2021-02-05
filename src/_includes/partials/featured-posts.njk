@@ -1,0 +1,37 @@
+<article class="featured-posts [ full-bleed ] [ pt-900 pb-900 bg-light-glare ]">
+	<div class="container">
+		<heading class="section-title">
+			<span class="[ text-500 ]">Indsigter</span>
+			<hr>
+		</heading>
+		<div class="[ d-grid grid-cols-1 md:grid-cols-3 gap-gutter mt-600 ]">
+			{% for item in posts | limit(3) %}
+				<figure class="featured-posts__item">
+					<a class="" href="/indsigter/{{ item.slug.current }}/">
+						{% if item.mainImage %}
+							<div class="image-color-overlay">
+								<img class="[ w-full ]" loading="lazy" width="400" height="250" srcset="{% croppedUrlFor item.mainImage, 400, 250 %} 1x, {% croppedUrlFor item.mainImage, 800, 500 %} 2x" alt="{{ item.mainImage.alt }}">
+							</div>
+						{% endif %}
+					</a>
+					<figcaption class="featured-posts__content [ flow ] [ flow-space-300 pt-300 pr-300 ]">
+						<a class="[ flow ]" class="" href="/indsigter/{{ item.slug.current }}/">
+							<h3 class="[ text-250 measure-compact ]">{{ item.title }}</h3>
+							<p class="[ line-clamp ] [ text-xs line-clamp-size-2 ]">{{ item.summary }}</p>
+						</a>
+						<div class="featured-posts__info">
+							<div class="image-color-overlay">
+								<img class="[ mr-xs ]" loading="lazy" width="40" height="40" srcset="{% croppedUrlFor item.author.mainImage, 40, 40 %} 1x, {% croppedUrlFor item.author.mainImage, 80, 80 %} 2x" alt="{{ item.author.mainImage.alt }}">
+							</div>
+							<div>
+								<span class="[ font-heading text-transform-up color-primary text-100 leading-tight ]">{{ item.author.name }}</span>
+								<time class="[ text-xs opc-80 ]" datetime="{{ item.publishedAt | w3DateFilter }}">{{ item.publishedAt | dateFilter }}</time>
+							</div>
+						</div>
+					</figcaption>
+
+				</figure>
+			{% endfor %}
+		</div>
+	</div>
+</article>

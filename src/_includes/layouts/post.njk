@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+
+
+<div>
+	<h1>{{ post.title }}sdsd</h1>
+    		{% if post.video %}
+			<video muted="muted" autoplay loop="loop" playsinline="" preload="auto" class="video">
+				<source src="{{ post.video }}" type="video/mp4">
+			</video>
+		{% endif %}
+	{% if post.mainImage %}<img src="{% croppedUrlFor post.mainImage, 1800, 900 %}" alt="{{ post.mainImage.alt }}">{% endif %}
+	<div>{{ post.body | markdownify | safe }}</div>
+	<h2>{{ post.categories.title }}fdf</h2>
+</div>

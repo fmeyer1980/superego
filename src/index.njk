@@ -1,0 +1,9 @@
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['css/home.css']%}
+{% block content %}
+	{% include "partials/hero.njk" %}
+	{% include "partials/intro.njk" %}
+	{% include "partials/featured-cases.njk" %}
+	{% include "partials/about.njk" %}
+	{% include "partials/featured-posts.njk" %}
+{% endblock %}

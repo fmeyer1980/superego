@@ -1,0 +1,29 @@
+.about {
+  position: relative;
+
+  &__brand-icon {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    height: 40vw;
+    max-height: 70%;
+    color: get-color('secondary-glare');
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    .about__text {
+      > div {
+        opacity: 0.8;
+        > * + * {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}

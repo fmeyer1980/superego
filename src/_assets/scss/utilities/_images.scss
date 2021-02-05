@@ -1,0 +1,18 @@
+.image--large {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--large-image-height);
+  background-color: get-color('primary-500');
+  z-index: 10;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}

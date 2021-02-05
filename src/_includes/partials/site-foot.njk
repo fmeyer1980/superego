@@ -1,0 +1,47 @@
+<footer class="site-foot bg-secondary-glare p-gutter color-light-glare text-xs">
+	<div class=" bg-secondary pt-900 pb-900">
+		<div class="site-foot__inner-wrapper container">
+			<div class=" flow flow-space-200">
+				{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-400") | safe }}
+				<div>
+					<p>{{ site.address }}<br/>{{ site.zip }}<br/>Cvr:
+						{{ site.cvr }}</p>
+				</div>
+				<ul class="contact">
+					<li>
+						<span>Tel:</span>
+						<a href="tel:{{ site.phone }}">{{ site.phone }}</a>
+					</li>
+					<li>
+						<span>Mail:</span>
+						<a href="mailto:{{ site.mail }}">{{ site.mail }}</a>
+					</li>
+				</ul>
+				<ul class="socialmedia">
+					<li>
+						<a href="">{{ '/src/_includes/partials/svg/facebook.svg' | svgContents("fill-current h-xs") | safe }}</a>
+					</li>
+					<li>
+						<a href="">{{ '/src/_includes/partials/svg/linkedin.svg' | svgContents("fill-current h-xs") | safe }}</a>
+					</li>
+				</ul>
+			</div>
+			<hr>
+			<div>
+				<p class="h6">Det brander vi få</p>
+				<ul>
+					{% for item in services %}
+						<li>
+							<a href="kompetancer/{{ item.slug.current }}/">{{ item.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<hr>
+			<div>
+				<p class="h6">Hvorfor vælge os</p>
+			</div>
+
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,15 @@
+// .container {
+//   padding-left: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+//   padding-right: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+//   border-left: var(--gutter) solid transparent;
+//   border-right: var(--gutter) solid transparent;
+// }
+
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  margin-left: auto;
+  margin-right: auto;
+}

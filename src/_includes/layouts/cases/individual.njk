@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+
+
+<div>
+    {{ cases.title }}
+    <img width="900" height="300" src="{% croppedUrlFor cases.mainImage, 1800, 600 %}" alt="{{ cases.mainImage.alt }}">
+    {{ cases.body | markdownify | safe }}
+</div>

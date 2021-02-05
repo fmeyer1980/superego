@@ -1,0 +1,36 @@
+.site-foot {
+  &__inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      flex-grow: 1;
+      padding: 0 get-size('900');
+    }
+  }
+
+  hr {
+    width: 1px;
+    height: auto;
+    border: none;
+    background-color: rgba(get-color('light-glare'), 0.08);
+  }
+
+  .socialmedia {
+    display: flex;
+
+    > * + * {
+      margin-left: 0.7rem;
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: get-size('500');
+      height: get-size('500');
+      border: 1px solid get-color('light-glare');
+      line-height: 100%;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.section-pad {
+  @include apply-utility('pt', 'lg');
+  @include apply-utility('pb', 'lg');
+}

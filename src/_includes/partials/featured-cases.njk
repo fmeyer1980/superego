@@ -1,0 +1,25 @@
+<section class="featured-cases [ full-bleed ] [ bg-secondary-glare color-white pt-xl pb-xl ]">
+	<div class="container [ flow ] [ flow-space-600 ]">
+		<div class="section-title">
+			<span class="[ text-700 ]">{{ home.featuredCases.headline }}</span>
+			<hr>
+			<p class="[ text-200 measure-short ]">{{ home.featuredCases.text }}</p>
+		</div>
+		<ul class="featured-cases__list [ auto-grid grid-size-mid auto-grid-gap-none ]">
+			{% for item in home.featuredCases.cases %}
+				<li class="featured-cases__list__item">
+					<a href="cases/{{ item.slug.current }}/">
+						<div class="[ image-color-overlay ]">
+							{% if item.mainImage %}
+								<img loading="lazy" width="400" height="400" srcset="{% croppedUrlFor item.mainImage, 400, 400 %} 1x, {% croppedUrlFor item.mainImage, 800, 800 %} 2x" alt="">
+							{% endif %}
+						</div>
+						<div class="content">
+							<h3 class="[ text-600 ]">{{ item.title }}</h3>
+						</div>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

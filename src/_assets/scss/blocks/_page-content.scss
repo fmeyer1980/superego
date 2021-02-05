@@ -1,0 +1,55 @@
+.page-content {
+  @include apply-utility('leading', 'loose');
+  @include apply-utility('measure', 'major');
+  font-size: calc(var(--size-200) + 2px);
+  // > * {
+  //   @include apply-utility('measure', 'major');
+  // }
+
+  blockquote {
+    border-inline-start: get-size('100') solid get-color('primary');
+    padding-inline-start: get-size('600');
+    padding-inline-end: get-size('600');
+    padding-top: get-size('500');
+    padding-bottom: get-size('500');
+    font-style: italic;
+    background-color: get-color('primary');
+    font-size: get-size('200');
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  h2 {
+    font-size: get-size('600');
+  }
+
+  h3 {
+    font-size: get-size('500');
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  ol,
+  ul {
+    padding-inline-start: get-size('600');
+  }
+
+  li + li {
+    margin-top: get-size('100');
+  }
+
+  h2,
+  h3 {
+    --flow-space: #{get-size('700')};
+    @include apply-utility('measure', 'short');
+    text-transform: none;
+  }
+  h2 + *,
+  h3 + * {
+    --flow-space: #{get-size('100')};
+  }
+}

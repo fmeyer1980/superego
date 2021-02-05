@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "text": "cases",
+      "url": "/cases/"
+    },
+    {
+      "text": "Kompetencer",
+      "url": "/kompetencer/"
+    },
+    {
+      "text": "Bureauet",
+      "url": "/bureauet/"
+    },
+    {
+      "text": "Superego Digital",
+      "url": "/superego-digital/"
+    },
+    {
+      "text": "Kontakt",
+      "url": "/kontakt/"
+    }
+  ]
+}

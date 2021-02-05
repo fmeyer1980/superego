@@ -1,0 +1,25 @@
+:root {
+  --gutter: var(--size-400);
+  --bg-boder: var(--size-800);
+  --container-width: 1280px;
+  --flow-space: #{get-size('600')};
+  --container-padding: var(--gutter);
+  @include media-query('xl') {
+    --container-padding: calc((100vw - var(--container-width)) / 2);
+  }
+
+  /* Fluid scale */
+  --size-xs: clamp(0.47rem, 0.4041rem + 0.3295vw, 0.6513rem);
+  --size-sm: clamp(0.5644rem, 0.4855rem + 0.3943vw, 0.7813rem);
+  --size-100: clamp(0.6769rem, 0.5821rem + 0.4739vw, 0.9375rem);
+  --size-200: clamp(0.8125rem, 0.6989rem + 0.5682vw, 1.125rem);
+  --size-300: clamp(0.975rem, 0.8386rem + 0.6818vw, 1.35rem);
+  --size-400: clamp(1.17rem, 1.0064rem + 0.8182vw, 1.62rem);
+  --size-500: clamp(1.4038rem, 1.2074rem + 0.9818vw, 1.9438rem);
+  --size-600: clamp(1.685rem, 1.4495rem + 1.1773vw, 2.3325rem);
+  --size-700: clamp(2.0219rem, 1.7391rem + 1.4136vw, 2.7994rem);
+  --size-800: clamp(2.4263rem, 2.0869rem + 1.6966vw, 3.3594rem);
+  --size-900: clamp(2.9113rem, 2.504rem + 2.0364vw, 4.0313rem);
+  --size-lg: clamp(3.4938rem, 3.0051rem + 2.4432vw, 4.8375rem);
+  --size-xl: clamp(4.1925rem, 3.6061rem + 2.9318vw, 5.805rem);
+}

@@ -1,0 +1,36 @@
+.site-head {
+  padding-top: get-size('200');
+
+  &__inner-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: calc(-1 * var(--size-200));
+    margin-right: calc(-1 * var(--size-200));
+
+    > * {
+      margin-left: get-size('200');
+      margin-right: get-size('200');
+      margin-bottom: get-size('200');
+    }
+  }
+
+  &__logo {
+    height: get-size('400');
+  }
+
+  &__main-nav {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: calc(-1 * var(--size-200));
+      margin-right: calc(-1 * var(--size-200));
+
+      li {
+        margin-left: get-size('200');
+        margin-right: get-size('200');
+      }
+    }
+  }
+}

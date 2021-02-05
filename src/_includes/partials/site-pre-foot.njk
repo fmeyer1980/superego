@@ -1,0 +1,28 @@
+<section class="site-prefoot [ pt-lg pb-gutter bg-secondary-glare color-light-glare ]">
+	<div class="[ container ] [ flow flow-space-800 ]">
+		<heading class="section-title">
+			<span class="[ text-500 ]">{{ site.preFoot.title }}</span>
+			<hr>
+			<p class="[ text-100 measure-normal ]">{{ site.preFoot.text }}</p>
+		</heading>
+		<form class="site-prefoot__form [ d-grid grid-cols-1 md:grid-cols-4 gap-gutter ]" name="contact" method="POST" action="/tak.html" netlify-honeypot="bot-field" data-netlify="true">
+			<p class="d-hidden">
+				<label>Don’t fill this out if you're human:
+					<input name="bot-field"/></label>
+			</p>
+			<label class="[ flow ] [ flow-space-xs ]">
+				<input type="text" name="fornavn" placeholder="Dit navn...">
+				<div class="[ font-heading opc-70 text-xs weight-mid text-transform-up ]">Navn</div>
+			</label>
+			<label class="[ flow ] [ flow-space-xs ]">
+				<input type="text" name="efternavn" placeholder="Telefonnummer...">
+				<div class="[ font-heading opc-70 text-xs weight-mid text-transform-up ]">Telefon</div>
+			</label>
+			<label class="[ flow ] [ flow-space-xs ]">
+				<input type="mail" name="email" placeholder="Din e-mail...">
+				<div class="[ font-heading opc-70 text-xs weight-mid text-transform-up ]">E-mail</div>
+			</label>
+			<button class="cursor-pointer">Bliv kontaktet</button>
+		</form>
+	</div>
+</section>

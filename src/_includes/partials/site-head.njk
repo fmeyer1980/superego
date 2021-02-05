@@ -1,0 +1,15 @@
+<header class="site-head container">
+	<div class="site-head__inner-wrapper">
+		<a class="site-head__logo" href="/">{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-full") | safe }}</a>
+		<nav class="site-head__main-nav">
+			<ul class="site-head__main-nav__list">
+				<li>
+					<a {{ helpers.getLinkActiveState(("/"+ servicePage.slug.current +"/"), page.url) | safe }} href="/{{ servicePage.slug.current }}/">{{ servicePage.title }}</a>
+				</li>
+				<li>
+					<a {{ helpers.getLinkActiveState(("/"+ casesPage.slug.current +"/"), page.url) | safe }} href="/{{ casesPage.slug.current }}/">{{ casesPage.title }}</a>
+				</li>
+			</li>
+		</ul>
+	</nav>
+</div></header>
