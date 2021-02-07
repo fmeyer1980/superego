@@ -3,18 +3,11 @@
 		<a class="site-head__logo" href="/">{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-full") | safe }}</a>
 		<nav class="site-head__main-nav">
 			<ul class="site-head__main-nav__list">
-				<li>
-					<a {{ helpers.getLinkActiveState(("/"+ servicePage.slug.current +"/"), page.url) | safe }} href="/{{ servicePage.slug.current }}/">{{ servicePage.title }}</a>
-				</li>
-				<li>
-					<a {{ helpers.getLinkActiveState(("/"+ casesPage.slug.current +"/"), page.url) | safe }} href="/{{ casesPage.slug.current }}/">{{ casesPage.title }}</a>
-				</li>
-				<li>
-					<a {{ helpers.getLinkActiveState(("/"+ bureauet.slug.current +"/"), page.url) | safe }} href="/{{ bureauet.slug.current }}/">{{ bureauet.title }}</a>
-				</li>
-				<li>
-					<a {{ helpers.getLinkActiveState(("/"+ site.contact.slug.current +"/"), page.url) | safe }} href="/{{ site.contact.slug.current }}/">{{ site.contact.title }}</a>
-				</li>
+				{% for item in mainPages %}
+					<li>
+						<a class="[ font-heading text-300 md:text-200 ]" {{ helpers.getLinkActiveState(("/"+ item.slug.current +"/"), page.url) | safe }} href="/{{ item.slug.current }}/">{{ item.title }}</a>
+					</li>
+				{% endfor %}
 			</li>
 		</ul>
 	</nav>

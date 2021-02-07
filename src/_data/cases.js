@@ -18,6 +18,7 @@ async function getCases () {
   const projection = groq`{
     title,
     slug,
+    summary,
     mainImage,
     body[]{
       ...,

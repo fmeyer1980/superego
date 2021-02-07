@@ -30,6 +30,16 @@
       li {
         margin-left: get-size('200');
         margin-right: get-size('200');
+
+        a {
+          padding-top: 3px;
+          border-bottom: 3px solid transparent;
+
+          &[data-state='active'],
+          &[aria-current='page'] {
+            border-color: get-color('primary');
+          }
+        }
       }
     }
   }

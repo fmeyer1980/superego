@@ -1,10 +1,14 @@
----
-layout: layouts/base.njk
----
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['css/page.css']%}
 
+{% set bannerTitle = cases.title %}
+{% set bannerSummary = cases.summary %}
+{% set bannerImage = cases.mainImage %}
+{% set bannerImageAlt = cases.mainImage.alt %}
 
-<div>
-    {{ cases.title }}
-    <img width="900" height="300" src="{% croppedUrlFor cases.mainImage, 1800, 600 %}" alt="{{ cases.mainImage.alt }}">
-    {{ cases.body | markdownify | safe }}
-</div>
+{% block content %}
+	{% include "partials/banner.njk" %}
+	<div class="page-content [ flow ] [ pt-900 pb-900 ]">
+		{{ cases.body | markdownify | safe }}
+	</div>
+{% endblock %}

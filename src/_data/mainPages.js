@@ -5,24 +5,26 @@ const serializers = require('../../utils/serializers')
 const overlayDrafts = require('../../utils/overlayDrafts')
 const hasToken = !!client.config().token
 
-function generateServices (services) {
+function generatePages (pages) {
   return {
-    ...services,
-    excerpt: BlocksToMarkdown(services.excerpt, { serializers, ...client.config() }),
-    body: BlocksToMarkdown(services.body, { serializers, ...client.config() })
+    ...pages,
+    excerpt: BlocksToMarkdown(pages.excerpt, { serializers, ...client.config() }),
+    body: BlocksToMarkdown(pages.body, { serializers, ...client.config() })
   }
 }
 
-async function getServices () {
+async function getPages () {
   // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "services" && defined(slug)]`
+  const filter = groq`*[_type == "pages" && defined(slug)]`
   const projection = groq`{
     title,
-    slug{
-      current
-    },
-    icon,
+    slug,
+    order,
+    summary,
     mainImage,
+    content[]{
+        ...,
+    },
     body[]{
       ...,
       children[]{
@@ -30,12 +32,12 @@ async function getServices () {
       }
     },
   }`
-  const order = `| order(publishedAt asc)`
+  const order = `| order(order asc)`
   const query = [filter, projection, order].join(' ')
   const docs = await client.fetch(query).catch(err => console.error(err))
   const reducedDocs = overlayDrafts(hasToken, docs)
-  const prepareServices = reducedDocs.map(generateServices)
-  return prepareServices
+  const preparePages = reducedDocs.map(generatePages)
+  return preparePages
 }
 
-module.exports = getServices
+module.exports = getPages

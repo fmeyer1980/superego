@@ -1,7 +1,7 @@
 <footer class="site-foot bg-secondary-glare p-gutter color-light-glare text-xs">
 	<div class=" bg-secondary pt-900 pb-900">
 		<div class="site-foot__inner-wrapper container">
-			<div class=" flow flow-space-200">
+			<div class="[ flow flow-space-200 ]">
 				{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-400") | safe }}
 				<div>
 					<p>{{ site.address }}<br/>{{ site.zip }}<br/>Cvr:
@@ -27,19 +27,31 @@
 				</ul>
 			</div>
 			<hr>
-			<div>
-				<p class="h6">Det brander vi få</p>
-				<ul>
+			<div class="[ flow flow-space-400 ]">
+				<p class="h5">{{ site.footer.colTwoTitle }}</p>
+				<ul class="site-foot__service-links">
 					{% for item in services %}
 						<li>
-							<a href="/{{ servicePage.slug.current }}/{{ item.slug.current }}/">{{ item.title }}</a>
+							<a href="/{{ servicePage.slug.current }}/{{ item.slug.current }}/">
+								<div>
+									{% if item.icon %}
+										{{ item.icon | safe }}
+									{% endif %}
+								</div>
+								<span>
+									{{ item.title }}
+								</span>
+							</a>
 						</li>
 					{% endfor %}
 				</ul>
 			</div>
 			<hr>
-			<div>
-				<p class="h6">Hvorfor vælge os</p>
+			<div class="[ flow flow-space-400 ]">
+				<p class="h5">{{ site.footer.colThreeTitle }}</p>
+				{% for item in site.footer.images %}
+					<img class="icon-image" loading="lazy" width="400" height="250" srcset="{% imageUrlFor item, 200 %} 1x, {% imageUrlFor item, 400 %} 2x" alt="{{ item.alt }}">
+				{% endfor %}
 			</div>
 
 		</div>
