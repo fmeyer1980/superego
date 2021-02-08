@@ -3,7 +3,7 @@
 		<div class="about__text [ flow ] [ text-200 flow-space-600 measure-mid ]">
 			<h2 class="h3 font-base weight-normal leading-tight">{{ home.about.headline }}</h2>
 			{{ home.about.text | sanityToHTML | safe }}
-			<a class="btn" data-type="primary" href="{{ home.about.btnLink }}">{{ home.about.btnText }}</a>
+			<a class="btn" data-type="primary" href="{{ home.about.btnSlug.current }}">{{ home.about.btnText }}</a>
 		</div>
 	</div>
 	{{ '/src/_includes/partials/svg/brand-icon.svg' | svgContents("about__brand-icon d-hidden md:d-visible fill-current") | safe }}

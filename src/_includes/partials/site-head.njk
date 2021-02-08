@@ -5,7 +5,7 @@
 			<ul class="site-head__main-nav__list">
 				{% for item in mainPages %}
 					<li>
-						<a class="[ font-heading text-300 md:text-200 ]" {{ helpers.getLinkActiveState(("/"+ item.slug.current +"/"), page.url) | safe }} href="/{{ item.slug.current }}/">{{ item.title }}</a>
+						<a class="[ font-heading text-400 md:text-200 ]" {{ helpers.getLinkActiveState(("/"+ item.slug.current +"/"), page.url) | safe }} href="/{{ item.slug.current }}/">{{ item.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>

@@ -35,6 +35,8 @@
         a {
           padding-top: 3px;
           border-bottom: 3px solid transparent;
+          display: block;
+          // @include apply-utility('text-transform', 'up');
 
           &[data-state='active'],
           &[aria-current='page'] {

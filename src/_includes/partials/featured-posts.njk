@@ -4,10 +4,10 @@
 			<span class="[ text-500 ]">Indsigter</span>
 			<hr>
 		</heading>
-		<div class="[ d-grid grid-cols-1 md:grid-cols-3 gap-gutter mt-600 ]">
+		<div class="[ d-grid grid-cols-1 md:grid-cols-3 gap-800 md:gap-gutter mt-600 ]">
 			{% for item in posts | limit(3) %}
 				<figure class="featured-posts__item">
-					<a class="" href="/indsigter/{{ item.slug.current }}/">
+					<a class="" aria-label="{{ item.title }}" href="/indsigter/{{ item.slug.current }}/">
 						{% if item.mainImage %}
 							<div class="image-color-overlay">
 								<img class="[ w-full ]" loading="lazy" width="400" height="250" srcset="{% croppedUrlFor item.mainImage, 400, 250 %} 1x, {% croppedUrlFor item.mainImage, 800, 500 %} 2x" alt="{{ item.mainImage.alt }}">
@@ -24,7 +24,7 @@
 								<img class="[ mr-xs ]" loading="lazy" width="40" height="40" srcset="{% croppedUrlFor item.author.mainImage, 40, 40 %} 1x, {% croppedUrlFor item.author.mainImage, 80, 80 %} 2x" alt="{{ item.author.mainImage.alt }}">
 							</div>
 							<div>
-								<span class="[ font-heading text-transform-up color-primary text-100 leading-tight ]">{{ item.author.name }}</span>
+								<span class="[ font-heading text-transform-up color-secondary-shade text-100 leading-tight ]">{{ item.author.name }}</span>
 								<time class="[ text-xs opc-80 ]" datetime="{{ item.publishedAt | w3DateFilter }}">{{ item.publishedAt | dateFilter }}</time>
 							</div>
 						</div>

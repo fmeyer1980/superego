@@ -30,7 +30,7 @@ module.exports =  async function() {
       headline,
       text,
       btnText,
-      btnLink
+      btnSlug
     }
     }[0]
   `)
