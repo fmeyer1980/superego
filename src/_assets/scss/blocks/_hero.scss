@@ -1,9 +1,12 @@
 .hero {
   &__inner-wrapper {
-    margin-left: get-size('gutter');
-    margin-right: get-size('gutter');
     display: flex;
     flex-direction: column;
+
+    @include media-query('md') {
+      margin-left: get-size('gutter');
+      margin-right: get-size('gutter');
+    }
   }
 
   &__video {

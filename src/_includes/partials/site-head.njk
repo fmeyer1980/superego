@@ -1,6 +1,6 @@
 <header class="site-head container">
 	<div class="site-head__inner-wrapper">
-		<a class="site-head__logo" href="/">{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-full") | safe }}</a>
+		<a class="site-head__logo" aria-label="{{ site.name }}" href="/">{{ '/src/_includes/partials/svg/logo.svg' | svgContents("fill-current h-full") | safe }}</a>
 		<nav class="site-head__main-nav">
 			<ul class="site-head__main-nav__list">
 				{% for item in mainPages %}

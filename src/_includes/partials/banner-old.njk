@@ -1,0 +1,21 @@
+<section class="banner [ full-bleed ]">
+	<div class="banner__image [ image-color-overlay ]">
+		{% if bannerImage %}
+			<picture>
+				<source srcset="{% croppedUrlFor bannerImage, 480, 400 %} 1x, {% croppedUrlFor bannerImage, 960, 800 %} 2x" media="(max-width: 480px)">
+				<source srcset="{% croppedUrlFor bannerImage, 768, 400 %} 1x, {% croppedUrlFor bannerImage, 1536, 800 %} 2x" media="(max-width: 768px)">
+				<source srcset="{% croppedUrlFor bannerImage, 992, 400 %} 1x, {% croppedUrlFor bannerImage, 1984, 800 %} 2x" media="(max-width: 992px)">
+				<source srcset="{% croppedUrlFor bannerImage, 1200, 400 %} 1x, {% croppedUrlFor bannerImage, 2400, 800 %} 2x" media="(max-width: 1280px)">
+				<source srcset="{% croppedUrlFor bannerImage, 1400, 500 %} 1x, {% croppedUrlFor bannerImage, 2800, 1000 %} 2x" media="(max-width: 1400px)">
+				<img class="[ w-full ]" srcset="{% croppedUrlFor bannerImage, 1400, 500 %} 1x, {% croppedUrlFor bannerImage, 2800, 1000 %} 2x" alt="{{ bannerImageAlt }}">
+			</picture>
+
+
+			{# <img class="[ w-full ]" width="480" height="158" sizes="(min-width: 48rem) 60vw, 90vw" src="{% croppedUrlFor bannerImage, 480, 158 %}" srcset="{% croppedUrlFor bannerImage, 480, 158 %} 480w, {% croppedUrlFor bannerImage, 480, 252 %} 768w, {% croppedUrlFor bannerImage, 1024, 336 %} 1024w, {% croppedUrlFor bannerImage, 1400, 460 %} 1280w, {% croppedUrlFor bannerImage, 2000, 657 %} 1600w" alt="{{ bannerImageAlt }}"/> #}
+		{% endif %}
+	</div>
+	<div class="banner__content [ flow ] [ bg-secondary color-white flow-space-200 ]">
+		<h1 class="[ text-900  measure-micro ]">{{ bannerTitle }}</h1>
+		<p class="[ measure-mid ]">{{ bannerSummary }}</p>
+	</div>
+</section>

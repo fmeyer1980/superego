@@ -1,9 +1,9 @@
 body {
   @include apply-utility('font', 'base');
-  font-weight: 400;
-  font-size: 1rem;
-  background-color: get-color('white');
-  color: get-color('black');
+  @include apply-utility('weight', 'normal');
+  font-size: 0.9375rem;
+  background-color: get-color('light-glare');
+  color: get-color('secondary-shade');
   @include apply-utility('leading', 'normal');
   overflow-x: hidden;
 }

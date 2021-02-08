@@ -1,14 +1,21 @@
 {% extends "layouts/base.njk" %}
 {% set pageCriticalStyles = ['css/page.css']%}
-
+{% set metaTitle = cases.meta.title %}
+{% set metaDesc = cases.meta.description %}
 {% set bannerTitle = cases.title %}
 {% set bannerSummary = cases.summary %}
-{% set bannerImage = cases.mainImage %}
-{% set bannerImageAlt = cases.mainImage.alt %}
 
 {% block content %}
 	{% include "partials/banner.njk" %}
-	<div class="page-content [ flow ] [ pt-900 pb-900 ]">
-		{{ cases.body | markdownify | safe }}
+
+	<div class="[ d-grid grid-cols-12 gap-900 pt-900 pb-900 ]">
+		<article class="page-content [ flow ] [ span-12 md:span-8 ]">
+			{% if cases.mainImage %}<img width="480" height="158" sizes="(min-width: 48rem) 60vw, 90vw" src="{% croppedUrlFor cases.mainImage, 480, 267 %}" srcset="{% croppedUrlFor cases.mainImage, 480, 267 %} 480w, {% croppedUrlFor cases.mainImage, 768, 427 %} 768w, {% croppedUrlFor cases.mainImage, 1024, 569 %} 1024w, {% croppedUrlFor cases.mainImage, 1280, 711 %} 1280w, {% croppedUrlFor cases.mainImage, 1600, 890 %} 1600w" alt="{{ cases.mainImage.alt }}"/>
+			{% endif %}
+			{{ cases.body | markdownify | safe }}
+		</article>
+		<aside class="[ span-12 md:span-4 ]">
+			{% include "partials/contact-form.njk" %}
+		</aside>
 	</div>
 {% endblock %}

@@ -1,8 +1,36 @@
-// .site-prefoot {
-//   &__form {
-//     button {
-//       align-self: flex-start;
-//       height: get-size('900');
-//     }
-//   }
-// }
+.site-prefoot {
+  input {
+    all: unset;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(get-color('white'), 0.1);
+    height: get-size('900');
+    width: 100%;
+    @include apply-utility('weight', 'light');
+    font-size: get-size('300');
+
+    &::placeholder {
+      opacity: 0.4;
+      @include apply-utility('opc', '70');
+    }
+
+    &:focus {
+      outline: none;
+      border-color: get-color('primary');
+    }
+  }
+
+  button {
+    @include apply-utility('font', 'heading');
+    @include apply-utility('text-transform', 'up');
+    background-color: get-color('primary');
+    @include apply-utility('opc', '70');
+    font-size: get-size('200');
+    color: get-color('secondary-shade');
+    height: get-size('900');
+    opacity: 1;
+    border: none;
+    align-self: flex-start;
+    @include apply-utility('weight', 'bold');
+    padding: 0 get-size('200');
+  }
+}

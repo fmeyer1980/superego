@@ -16,6 +16,10 @@ async function getCases () {
   // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
   const filter = groq`*[ _type == "cases" ]`
   const projection = groq`{
+    meta{
+      title,
+      description
+    },
     title,
     slug,
     summary,

@@ -22,6 +22,7 @@ async function getPages () {
     order,
     summary,
     mainImage,
+    layouts,
     content[]{
         ...,
     },

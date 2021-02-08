@@ -6,12 +6,23 @@
   @include apply-utility('weight', 'bold');
   line-height: 1;
   transition: background-color, color, 0.2s ease-in-out;
-  align-items: center;
+  justify-content: center;
   font-size: 1rem;
   padding: 1em 1.6em;
 
   &[data-type='primary'] {
-    color: get-color('secondary');
+    color: get-color('secondary-shade');
+    @include apply-utility('text-transform', 'up');
+    background-color: get-color('primary');
+    border: none;
+
+    &:hover {
+      background-color: get-color('primary');
+      color: get-color('secondary');
+    }
+  }
+
+  &[data-type='stroke'] {
     @include apply-utility('text-transform', 'up');
     border: 2px solid get-color('primary');
     color: get-color('primary');

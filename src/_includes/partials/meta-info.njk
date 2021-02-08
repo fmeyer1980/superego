@@ -1,3 +1,11 @@
+{% if not metaTitle %}
+	{% set metaTitle = home.meta.title %}
+{% endif %}
+
+{% if not metaDesc %}
+	{% set metaDesc = home.meta.description %}
+{% endif %}
+
 <title>{{ metaTitle }}</title>
 <link rel="canonical" href="{{ currentUrl }}"/>
 
@@ -14,9 +22,7 @@
 	<meta name="twitter:image:alt" content="Page image for {{ site.name }}"/>
 {% endif %}
 
-{% if metaDesc %}
-	<meta name="description" content="{{ metaDesc }}"/>
-	<meta name="twitter:description" content="{{ metaDesc }}"/>
-	<meta property="og:description" content="{{ metaDesc }}"/>
-{% endif %}
+<meta name="description" content="{{ metaDesc }}"/>
+<meta name="twitter:description" content="{{ metaDesc }}"/>
+<meta property="og:description" content="{{ metaDesc }}"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>

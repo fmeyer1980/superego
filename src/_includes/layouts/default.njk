@@ -3,14 +3,15 @@
 
 {% set bannerTitle = pages.title %}
 {% set bannerSummary = pages.summary %}
-{% set bannerImage = pages.mainImage %}
-{% set bannerImageAlt = pages.mainImage.alt %}
 
 {% block content %}
 	{% include "partials/banner.njk" %}
 	<div class="page-content [ flow ] [ pt-900 pb-900 ]">
+		{% if pages.mainImage %}<img class="[ w-full ]" width="480" height="158" sizes="(min-width: 48rem) 60vw, 90vw" src="{% croppedUrlFor pages.mainImage, 480, 158 %}" srcset="{% croppedUrlFor pages.mainImage, 480, 158 %} 480w, {% croppedUrlFor pages.mainImage, 480, 252 %} 768w, {% croppedUrlFor pages.mainImage, 1024, 336 %} 1024w, {% croppedUrlFor pages.mainImage, 1400, 460 %} 1280w, {% croppedUrlFor pages.mainImage, 2000, 657 %} 1600w" alt="{{ pages.mainImage.alt }}"/>
+		{% endif %}
 		{{ pages.body | markdownify | safe }}
 	</div>
+	<h1>{{ pages.layouts }}</h1>
 {% endblock %}
 
 {# 

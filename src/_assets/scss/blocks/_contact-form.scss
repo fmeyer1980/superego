@@ -1,0 +1,27 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea {
+    border: none;
+    background-color: get-color('light-glare');
+    width: 100%;
+    padding: 1em;
+    font-size: get-size('xs');
+
+    &::placeholder {
+      opacity: 0.4;
+      @include apply-utility('opc', '70');
+    }
+  }
+
+  textarea {
+    min-height: 8rem;
+  }
+
+  span {
+    @include apply-utility('font', 'heading');
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}

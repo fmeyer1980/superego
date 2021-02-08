@@ -1,20 +1,13 @@
 .page-content {
-  @include apply-utility('leading', 'loose');
   @include apply-utility('measure', 'major');
 
-  > * {
-    @include apply-utility('measure', 'major');
-  }
-
   blockquote {
-    border-inline-start: get-size('100') solid get-color('primary');
-    padding-inline-start: get-size('600');
-    padding-inline-end: get-size('600');
-    padding-top: get-size('500');
-    padding-bottom: get-size('500');
+    border-inline-start: get-size('xxs') solid get-color('primary');
+    padding: get-size('100') get-size('900') get-size('100') get-size('gutter');
     font-style: italic;
-    background-color: get-color('primary');
-    font-size: get-size('200');
+    font-size: get-size('300');
+    @include apply-utility('weight', 'bold');
+    @include apply-utility('leading', 'tight');
   }
   img {
     width: 100%;
@@ -22,11 +15,11 @@
   }
 
   h2 {
-    font-size: get-size('600');
+    font-size: get-size('400');
   }
 
   h3 {
-    font-size: get-size('500');
+    font-size: get-size('400');
   }
 
   a {
