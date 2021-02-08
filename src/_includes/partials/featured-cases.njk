@@ -8,7 +8,7 @@
 		<ul class="featured-cases__list [ auto-grid grid-size-mid auto-grid-gap-none ]">
 			{% for item in home.featuredCases.cases %}
 				<li class="featured-cases__list__item">
-					<a href="cases/{{ item.slug.current }}/">
+					<a class="" href="cases/{{ item.slug.current }}/">
 						<div class="[ image-color-overlay ]">
 							{% if item.mainImage %}
 								<img loading="lazy" width="400" height="400" srcset="{% croppedUrlFor item.mainImage, 400, 400 %} 1x, {% croppedUrlFor item.mainImage, 800, 800 %} 2x" alt="">
@@ -17,6 +17,7 @@
 						<div class="content">
 							<h3 class="[ text-600 ]">{{ item.title }}</h3>
 						</div>
+						{{ '/src/_includes/partials/svg/arrow.svg' | svgContents("arrow fill-current h-300 mt-200") | safe }}
 					</a>
 				</li>
 			{% endfor %}
