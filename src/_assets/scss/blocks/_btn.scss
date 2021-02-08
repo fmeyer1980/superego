@@ -17,8 +17,8 @@
     border: none;
 
     &:hover {
-      background-color: get-color('primary');
-      color: get-color('secondary');
+      background-color: get-color('primary-shade');
+      color: get-color('light-glare');
     }
   }
 

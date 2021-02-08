@@ -1,8 +1,24 @@
----
-layout: layouts/base.njk
----
+{% extends "layouts/base.njk" %}
+{% set pageCriticalStyles = ['css/page.css']%}
+{% set metaTitle = post.meta.title %}
+{% set metaDesc = post.meta.description %}
+{% set bannerTitle = post.title %}
+{% set bannerSummary = post.summary %}
 
-
+{% block content %}
+	{% include "partials/banner.njk" %}
+	<div class="[ d-grid grid-cols-6 gap-800 pt-800 pb-800 ]">
+		<article class="page-content [ flow ] [ span-6 md:span-3 lg:span-4 ]">
+			{% if post.mainImage %}<img width="480" height="158" sizes="(min-width: 48rem) 60vw, 90vw" src="{% croppedUrlFor post.mainImage, 480, 267 %}" srcset="{% croppedUrlFor post.mainImage, 480, 267 %} 480w, {% croppedUrlFor post.mainImage, 768, 427 %} 768w, {% croppedUrlFor post.mainImage, 1024, 569 %} 1024w, {% croppedUrlFor post.mainImage, 1280, 711 %} 1280w, {% croppedUrlFor post.mainImage, 1600, 890 %} 1600w" alt="{{ post.mainImage.alt }}"/>
+			{% endif %}
+			{{ post.body | markdownify | safe }}
+		</article>
+		<aside class="[ span-6 md:span-3 lg:span-2 ]">
+			{% include "partials/contact-form.njk" %}
+		</aside>
+	</div>
+{% endblock %}
+{# 
 <div>
 	<h1>{{ post.title }}sdsd</h1>
     		{% if post.video %}
@@ -13,4 +29,4 @@ layout: layouts/base.njk
 	{% if post.mainImage %}<img src="{% croppedUrlFor post.mainImage, 1800, 900 %}" alt="{{ post.mainImage.alt }}">{% endif %}
 	<div>{{ post.body | markdownify | safe }}</div>
 	<h2>{{ post.categories.title }}fdf</h2>
-</div>
+</div> #}

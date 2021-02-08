@@ -1,6 +1,5 @@
 .site-head {
-  padding-top: get-size('300');
-  padding-bottom: get-size('100');
+  padding-top: get-size('200');
 
   &__inner-wrapper {
     display: flex;
@@ -17,10 +16,6 @@
     }
   }
 
-  &__logo {
-    height: get-size('400');
-  }
-
   &__main-nav {
     &__list {
       display: flex;
@@ -31,12 +26,11 @@
       li {
         margin-left: get-size('200');
         margin-right: get-size('200');
+        margin-bottom: 0.3rem;
 
         a {
-          padding-top: 3px;
           border-bottom: 3px solid transparent;
           display: block;
-          // @include apply-utility('text-transform', 'up');
 
           &[data-state='active'],
           &[aria-current='page'] {

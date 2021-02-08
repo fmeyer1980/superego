@@ -19,18 +19,11 @@
     }
   }
 
-  button {
-    @include apply-utility('font', 'heading');
-    @include apply-utility('text-transform', 'up');
-    background-color: get-color('primary');
-    @include apply-utility('opc', '70');
-    font-size: get-size('200');
-    color: get-color('secondary-shade');
+  button.site-prefoot__button {
+    justify-content: center;
+    align-items: center;
     height: get-size('900');
-    opacity: 1;
-    border: none;
     align-self: flex-start;
-    @include apply-utility('weight', 'bold');
     padding: 0 get-size('200');
   }
 }

@@ -36,7 +36,8 @@
     }
 
     span {
-      font-size: 0.5em;
+      font-size: 0.4em;
+      color: get-color('primary');
       @include media-query('md') {
         position: relative;
         font-size: 0.14em;
@@ -46,8 +47,6 @@
         margin-block-end: 2rem;
         padding-block-start: 1rem;
         margin-inline-start: 0.5rem;
-        color: get-color('primary');
-        //   border-left: 1px solid rgba(#fff, 0.2);
         &:after {
           content: '';
           position: absolute;
