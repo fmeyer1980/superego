@@ -35,7 +35,8 @@
 		{% include "partials/site-pre-foot.njk" %}
 		{% include "partials/site-foot.njk" %}
 		<script defer>
-			{% include "js/quicklink.js" %}
+			{% include "js/main.js" %}
+{% include "js/quicklink.js" %}
 window.addEventListener('load', () => {
 quicklink.listen({
 ignores: [(uri, elem) => elem.hasAttribute('noprefetch')]

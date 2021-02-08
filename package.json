@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx gulp && concurrently 'npx gulp watch' 'npx eleventy --serve'",
     "production": "NODE_ENV=production npx gulp && npx gulp build && NODE_ENV=production eleventy",
-    "webpack": "webpack-cli src/_assets/js/index.js -o src/_assets/js/main.js --mode production"
+    "webpack": "webpack-cli src/_assets/js/index.js -o src/_includes/js/main.js --mode production"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "gulp-purgecss": "^2.3.0",
     "gulp-sass": "^4.1.0",
     "html-minifier": "^4.0.0",
+    "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "sass": "^1.26.10"
